@@ -14,4 +14,5 @@ export class AppComponent {
   ngOnInit() {
     this.primengConfig.ripple = true;
   }
+
 }

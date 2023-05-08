@@ -1,19 +1,20 @@
 import { KeycloakService } from "keycloak-angular";
 
 export function initializeKeycloak(keycloak: KeycloakService) {
-
     return () =>
         keycloak.init({
             config: {
                 url: 'http://keycloak:8090',
-                realm: 'software',
+                realm: 'ucb-judge',
                 clientId: 'frontend'
             },
             initOptions: {
-                onLoad: 'login-required',
+                onLoad: 'check-sso',
                 checkLoginIframe: false
-                // silentCheckSsoRedirectUri:
-                //     window.location.origin + '/assets/silent-check-sso.html'
-            }
+            },
+            bearerExcludedUrls: [
+                'register',
+                'error'
+            ]
         });
 }

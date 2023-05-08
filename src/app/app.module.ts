@@ -8,7 +8,6 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { initializeKeycloak } from './auth/init/keycloak.init';
-import { AuthGuard } from './auth/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -23,13 +22,14 @@ import { AuthGuard } from './auth/guards/auth.guard';
     UserModule,
     KeycloakAngularModule
   ],
-  providers: [AuthGuard,
+  providers: [
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
-      deps: [KeycloakService]
-    }],
+      deps: [KeycloakService],
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
