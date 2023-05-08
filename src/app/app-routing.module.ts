@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './auth/pages/register/register.component';
 import { AppAuthGuard } from './auth/guards/app-auth.guard';
-import { ErrorComponent } from './shared/error/error.component';
+import { ErrorComponent } from './shared/pages/error/error.component';
 import { UserProfileComponent } from './user/pages/user-profile/user-profile.component';
 
 const routes: Routes = [
