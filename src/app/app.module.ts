@@ -8,6 +8,8 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { initializeKeycloak } from './auth/init/keycloak.init';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { initializeKeycloak } from './auth/init/keycloak.init';
     PrimeNgModule,
     SharedModule,
     UserModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

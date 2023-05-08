@@ -4,6 +4,7 @@ import { RegisterComponent } from './auth/pages/register/register.component';
 import { AppAuthGuard } from './auth/guards/app-auth.guard';
 import { ErrorComponent } from './shared/pages/error/error.component';
 import { UserProfileComponent } from './user/pages/user-profile/user-profile.component';
+import { AccountSettingsComponent } from './user/pages/account-settings/account-settings.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
+    canActivate: [AppAuthGuard]
+  },
+  {
+    path: 'account-settings',
+    component: AccountSettingsComponent,
     canActivate: [AppAuthGuard]
   },
   // TODO: CHANGE ROUTE TO 404 PAGE
