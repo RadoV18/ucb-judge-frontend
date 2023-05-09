@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -8,11 +8,9 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent {
   title = 'ucb-judge-frontend';
-
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
     this.primengConfig.ripple = true;
   }
-
 }

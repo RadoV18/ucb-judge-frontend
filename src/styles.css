@@ -6,7 +6,7 @@
 
 html,
 body {
-    margin: 10px;
+    height: 90%;
     background-color: var(--surface-b);
     font-family: var(--font-family);
     color: var(--text-color);

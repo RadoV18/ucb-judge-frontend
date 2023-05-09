@@ -13,7 +13,7 @@ export class AppAuthGuard extends KeycloakAuthGuard {
   }
   async isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {
     // Force the user to log in if currently unauthenticated, unless it's the registration page.
-    if (!this.authenticated && route.url[0].path !== 'register') {
+    if (!this.authenticated) {
       console.log('User not authenticated, redirecting to login.');
       await this.keycloak.login({
         redirectUri: window.location.origin + state.url,

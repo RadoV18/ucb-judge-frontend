@@ -5,16 +5,21 @@ import { AppAuthGuard } from './auth/guards/app-auth.guard';
 import { ErrorComponent } from './shared/pages/error/error.component';
 import { UserProfileComponent } from './user/pages/user-profile/user-profile.component';
 import { AccountSettingsComponent } from './user/pages/account-settings/account-settings.component';
+import { LoginComponent } from './auth/pages/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'register',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: 'error',
     component: ErrorComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'register',

@@ -1,7 +1,5 @@
-<div class="card">
-    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
-</div>
-<p-card header="Formulario de registro" [style]="{ width: '25rem' }">
+<p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+<p-card header="Formulario de registro" [style]="{ width: '30rem' }">
     <div class="flex justify-content-center">
         <app-registration-form (formSubmitted)="onFormSubmitted($event)"></app-registration-form>
     </div>

@@ -9,7 +9,7 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 @NgModule({
   declarations: [
     MenuComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
   imports: [
     CommonModule,

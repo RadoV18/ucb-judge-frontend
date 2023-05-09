@@ -13,6 +13,6 @@ export class AuthService {
   }
 
   public createStudent(student: UserDto) {
-    return this.http.post<UserDto>(`${this.apiUrl}/v1/api/users/students`, student);
+    return this.http.post<String>(`${this.apiUrl}/v1/api/users/student`, student);
   }
 }
