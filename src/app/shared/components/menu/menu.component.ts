@@ -9,11 +9,13 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class MenuComponent implements OnInit {
   isAuthenticated = false;
+  title = '';
   constructor(public keycloakService: KeycloakService) { }
 
   items: MenuItem[] = [];
   async ngOnInit(): Promise<void> {
     this.isAuthenticated = await this.keycloakService.isLoggedIn();
+    this.title = this.isAuthenticated ? 'UCB JUDGE' : 'JUEZ VIRTUAL UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO"';
     if (this.isAuthenticated) {
       this.items = [
         {

@@ -2,7 +2,7 @@
     <ng-template pTemplate="start">
         <img src="./assets/images/uj_logo.png" alt="logo" width="50" height="50" class="mr-2" />
     </ng-template>
-    <ng-template pTemplate="end" *ngIf="isAuthenticated">
-        <span class="text-2xl font-bold text-gray-700">JUEZ VIRTUAL UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO"</span>
+    <ng-template pTemplate="end">
+        <span class="text-2xl font-bold text-gray-700">{{title}}</span>
     </ng-template>
 </p-menubar>
