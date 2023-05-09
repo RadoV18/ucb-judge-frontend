@@ -1,1 +1,33 @@
-<p>user-profile works!</p>
+<p-card header="User Profile" [style]="{ width: '30rem' }">
+    <div class="p-grid p-fluid">
+        <div class="p-col-4"><strong>First Name:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.firstName" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>Last Name:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.lastName" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>Email:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.email" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>ID:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.id" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>Username:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.username" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>Email Verified:</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="keycloakUserDto?.emailVerified ? 'Yes' : 'No'" [readonly]="true" />
+        </div>
+    </div>
+</p-card>

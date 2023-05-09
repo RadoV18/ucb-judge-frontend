@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { KeycloakUserDto } from '../dto/keycloak-user.dto';
 import { UserDto } from 'src/app/auth/dto/user.dto';
+import { ResponseDto } from '../dto/response.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +14,15 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  public getUser(userId: string) {
-    return this.http.get<KeycloakUserDto>(`${this.apiUrl}/v1/api/users/${userId}`);
+  public getUser(userId: String) {
+    return this.http.get<ResponseDto<KeycloakUserDto>>(`${this.apiUrl}/v1/api/users/${userId}`)
   }
 
-  public updateUser(userId: string, user: UserDto) {
-    return this.http.put<KeycloakUserDto>(`${this.apiUrl}/v1/api/users/${userId}`, user);
+  public updateUser(userId: String, user: UserDto) {
+    return this.http.put<ResponseDto<KeycloakUserDto>>(`${this.apiUrl}/v1/api/users/${userId}`, user);
   }
 
-  public deleteUser(userId: string) {
-    return this.http.delete<KeycloakUserDto>(`${this.apiUrl}/v1/api/users/${userId}`);
+  public deleteUser(userId: String) {
+    return this.http.delete<ResponseDto<KeycloakUserDto>>(`${this.apiUrl}/v1/api/users/${userId}`);
   }
 }
