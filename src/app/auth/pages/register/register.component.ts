@@ -25,7 +25,7 @@ export class RegisterComponent {
         this.messages = [{ severity: 'success', summary: 'Success', detail: 'User created' }];
         setTimeout(() => {
           this.router.navigate(['/user-profile']);
-        }, 3000);
+        }, 1000);
       },
       error: ({ error }) => {
         console.log(error);

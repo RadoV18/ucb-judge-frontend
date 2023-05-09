@@ -1,1 +1,33 @@
-<p>account-settings works!</p>
+<p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+<p-card header="Edit User Profile" [style]="{ width: '30rem' }">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="p-grid p-fluid">
+            <div class="p-col-4"><strong>First Name:</strong></div>
+            <div class="p-col-8">
+                <input pInputText formControlName="firstName" id="firstName" type="text" />
+            </div>
+            <br>
+            <div class="p-col-4"><strong>Last Name:</strong></div>
+            <div class="p-col-8">
+                <input pInputText formControlName="lastName" id="lastName" type="text" />
+            </div>
+            <br>
+            <div class="p-col-4"><strong>Email:</strong></div>
+            <div class="p-col-8">
+                <input pInputText formControlName="email" id="email" type="email" />
+            </div>
+            <br>
+            <div class="p-col-8">
+                <button type="submit" class="p-button p-button-primary">Actualizar perfil</button>
+            </div>
+            <br>
+            <div class="p-col-8">
+                <button (click)="logout()" class="p-button p-button-warning">Cerrar sesión</button>
+            </div>
+            <br>
+            <div class="p-col-8">
+                <button (click)="deleteProfile()" class="p-button p-button-danger">Eliminar cuenta</button>
+            </div>
+        </div>
+    </form>
+</p-card>
