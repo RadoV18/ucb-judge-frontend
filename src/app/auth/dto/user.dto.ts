@@ -5,4 +5,5 @@ export interface UserDto {
     username?: string;
     password?: string;
     confirmPassword?: string;
+    campusMajorId?: number;
 }

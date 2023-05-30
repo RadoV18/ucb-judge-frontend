@@ -16,4 +16,10 @@ export class CampusMajorService {
       `${this.apiUrl}/api/v1/campus-majors/campus/${campusId}`
     );
   }
+
+  public getCampusMajorByUserId(userId: String) {
+    return this.http.get<ResponseDto<CampusMajorDto>>(
+      `${this.apiUrl}/api/v1/campus-majors/student/${userId}`
+    );
+  }
 }

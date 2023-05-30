@@ -4,11 +4,13 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordUpdateComponent } from './pages/password-update/password-update.component';
 
 @NgModule({
   declarations: [
     UserProfileComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PasswordUpdateComponent
   ],
   imports: [
     CommonModule,

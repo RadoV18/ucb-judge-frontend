@@ -6,6 +6,7 @@ import { ErrorComponent } from './shared/pages/error/error.component';
 import { UserProfileComponent } from './user/pages/user-profile/user-profile.component';
 import { AccountSettingsComponent } from './user/pages/account-settings/account-settings.component';
 import { LoginComponent } from './auth/pages/login/login.component';
+import { PasswordUpdateComponent } from './user/pages/password-update/password-update.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'account-settings',
     component: AccountSettingsComponent,
+    canActivate: [AppAuthGuard]
+  },
+  {
+    path: 'password-update',
+    component: PasswordUpdateComponent,
     canActivate: [AppAuthGuard]
   },
   // TODO: CHANGE ROUTE TO 404 PAGE

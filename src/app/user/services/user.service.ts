@@ -30,4 +30,11 @@ export class UserService {
       `${this.apiUrl}/api/v1/users/profile/${userId}`
     );
   }
+
+  public updatePassword(userId: String, user: UserDto) {
+    return this.http.put<ResponseDto<String>>(
+      `${this.apiUrl}/api/v1/users/profile/${userId}/password`,
+      user
+    );
+  }
 }

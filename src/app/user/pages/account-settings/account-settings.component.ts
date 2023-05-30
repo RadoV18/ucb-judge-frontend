@@ -4,7 +4,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Message } from 'primeng/api';
-import { UserDto } from 'src/app/auth/dto/user.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-settings',
@@ -20,7 +20,8 @@ export class AccountSettingsComponent {
   constructor(
     private keycloakService: KeycloakService,
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router,
   ) {
     this.userId = this.keycloakService.getKeycloakInstance().subject || '';
     this.profileForm = this.formBuilder.group({
@@ -69,6 +70,10 @@ export class AccountSettingsComponent {
         console.log(error);
       },
     });
+  }
+
+  updatePassword() {
+    this.router.navigate(['password-update']);
   }
 
   deleteProfile() {

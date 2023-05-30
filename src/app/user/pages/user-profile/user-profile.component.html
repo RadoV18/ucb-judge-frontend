@@ -29,5 +29,16 @@
         <div class="p-col-8">
             <input pInputText [value]="keycloakUserDto?.emailVerified ? 'Yes' : 'No'" [readonly]="true" />
         </div>
+        <br>
+        <div class="p-col-4"><strong>Campus</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="campusMajorDto?.campus?.name" [readonly]="true" />
+        </div>
+        <br>
+        <div class="p-col-4"><strong>Major</strong></div>
+        <div class="p-col-8">
+            <input pInputText [value]="campusMajorDto?.major?.name" [readonly]="true" />
+        </div>
+
     </div>
 </p-card>
