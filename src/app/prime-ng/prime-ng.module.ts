@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessagesModule } from 'primeng/messages';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,8 @@ import { MessagesModule } from 'primeng/messages';
     ToolbarModule,
     TableModule,
     InputTextModule,
-    MessagesModule
+    MessagesModule,
+    DropdownModule,
   ]
 })
 export class PrimeNgModule { }

@@ -9,7 +9,7 @@ import { UserDto } from 'src/app/auth/dto/user.dto';
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class AccountSettingsComponent {
   profileForm: FormGroup;
@@ -17,7 +17,11 @@ export class AccountSettingsComponent {
   keycloakUserDto: KeycloakUserDto | null = null;
   messages: Message[] = [];
 
-  constructor(private keycloakService: KeycloakService, private userService: UserService, private formBuilder: FormBuilder) {
+  constructor(
+    private keycloakService: KeycloakService,
+    private userService: UserService,
+    private formBuilder: FormBuilder
+  ) {
     this.userId = this.keycloakService.getKeycloakInstance().subject || '';
     this.profileForm = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -30,7 +34,7 @@ export class AccountSettingsComponent {
     this.userService.getUser(this.userId).subscribe({
       next: (data) => {
         console.log(data);
-        this.keycloakUserDto = data.response;
+        this.keycloakUserDto = data.data;
         this.profileForm.patchValue({
           firstName: this.keycloakUserDto?.firstName,
           lastName: this.keycloakUserDto?.lastName,
@@ -39,8 +43,8 @@ export class AccountSettingsComponent {
       },
       error: (error) => {
         console.log(error);
-      }
-    })
+      },
+    });
   }
 
   logout() {
@@ -52,13 +56,19 @@ export class AccountSettingsComponent {
     this.userService.updateUser(this.userId, formData).subscribe({
       next: (data) => {
         console.log(data);
-        this.keycloakUserDto = data.response;
-        this.messages = [{ severity: 'success', summary: 'Success', detail: 'Profile updated' }];
+        this.keycloakUserDto = data.data;
+        this.messages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Profile updated',
+          },
+        ];
       },
       error: (error) => {
         console.log(error);
-      }
-    })
+      },
+    });
   }
 
   deleteProfile() {
@@ -69,9 +79,7 @@ export class AccountSettingsComponent {
       },
       error: (error) => {
         console.log(error);
-      }
-    })
+      },
+    });
   }
-
-
 }

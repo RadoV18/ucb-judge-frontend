@@ -1,39 +1,63 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <span class="p-float-label">
-        <input pInputText id="firstName" type="text" formControlName="firstName" class="p-inputtext">
-        <label htmlFor="firstName">Nombre</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="lastName" type="text" formControlName="lastName" class="p-inputtext">
-        <label htmlFor="lastName">Apellido</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="email" type="email" formControlName="email" class="p-inputtext">
-        <label htmlFor="email">Correo</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="username" type="text" formControlName="username" class="p-inputtext">
-        <label htmlFor="username">Nombre de usuario</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="password" type="password" formControlName="password" class="p-inputtext">
-        <label htmlFor="password">Contraseña</label>
-    </span>
-    <br>
-    <span class="p-float-label">
-        <input pInputText id="confirmPassword" type="password" formControlName="confirmPassword" class="p-inputtext">
-        <label htmlFor="confirmPassword">Confirmar contraseña</label>
-    </span>
-    <br>
-    <div class="flex justify-content-center">
-        <button type="submit" class="p-button p-button-primary">Registrarse</button>
+  <div class="p-grid p-fluid">
+    <div class="p-col-6">
+      <div class="p-grid">
+        <div class="p-col-4"><strong>First Name:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="firstName" type="text" formControlName="firstName" class="p-inputtext" />
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Last Name:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="lastName" type="text" formControlName="lastName" class="p-inputtext" />
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Email:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="email" type="email" formControlName="email" class="p-inputtext" />
+        </div>
+        <br />
+      </div>
     </div>
-    <br>
-    <div class="flex justify-content-center">
-        <a routerLink="/login" class="p-button p-button-secondary no-underline">Iniciar sesión</a>
+    <div class="p-col-6">
+      <div class="p-grid">
+        <div class="p-col-4"><strong>Username:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="username" type="text" formControlName="username" class="p-inputtext" />
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Password:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="password" type="password" formControlName="password" class="p-inputtext" />
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Confirm Password:</strong></div>
+        <div class="p-col-8">
+          <input pInputText id="confirmPassword" type="password" formControlName="confirmPassword"
+            class="p-inputtext" />
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Campus:</strong></div>
+        <div class="p-col-8">
+          <p-dropdown [options]="campuses" optionLabel="name" (onChange)="onCampusChange($event)"></p-dropdown>
+        </div>
+        <br />
+        <div class="p-col-4"><strong>Major:</strong></div>
+        <div class="p-col-8">
+          <p-dropdown [options]="campusesMajors" optionLabel="major.name"
+            (onChange)="onMajorChange($event)"></p-dropdown>
+        </div>
+        <br />
+      </div>
     </div>
+    <div class="p-col-12">
+      <button (click)="onSubmit()" class="p-button p-button-primary">
+        Sign Up
+      </button>
+    </div>
+    <br />
+    <div class="p-col-12">
+      <a routerLink="/login" class="p-button p-button-secondary no-underline">Already have an account? Login</a>
+    </div>
+  </div>
 </form>

@@ -6,13 +6,16 @@ import { KeycloakUserDto } from '../../dto/keycloak-user.dto';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class UserProfileComponent implements OnInit {
   userId: String;
   keycloakUserDto: KeycloakUserDto | null = null;
 
-  constructor(private keycloakService: KeycloakService, private userService: UserService) {
+  constructor(
+    private keycloakService: KeycloakService,
+    private userService: UserService
+  ) {
     this.userId = this.keycloakService.getKeycloakInstance().subject || '';
   }
 
@@ -20,11 +23,11 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUser(this.userId).subscribe({
       next: (data) => {
         console.log(data);
-        this.keycloakUserDto = data.response;
+        this.keycloakUserDto = data.data;
       },
       error: (error) => {
         console.log(error);
-      }
-    })
+      },
+    });
   }
 }
