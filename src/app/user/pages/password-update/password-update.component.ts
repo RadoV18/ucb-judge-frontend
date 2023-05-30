@@ -3,7 +3,6 @@ import { KeycloakService } from 'keycloak-angular';
 import { UserService } from '../../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Message } from 'primeng/api';
-import { UserDto } from 'src/app/auth/dto/user.dto';
 
 @Component({
   selector: 'app-password-update',

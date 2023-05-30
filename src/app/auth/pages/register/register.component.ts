@@ -25,6 +25,7 @@ export class RegisterComponent {
       ];
       return;
     }
+
     this.authService.createStudent(formData).subscribe({
       next: (data) => {
         console.log(data);
